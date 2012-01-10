@@ -1,12 +1,23 @@
 module Ean
   class Client
+    extend Forwardable
+
+    include Hotels
 
     attr_reader :cid, :apikey, :secret
 
     def initialize options={}
-      @cid = options[:cid]
+      @cid = options[:cid].nil? ? default_cid : options[:cid]
       @apikey = options[:apikey]
       @secret = options[:secret]
+      @minorRev = options[:minorRev]
+      @locale = options[:locale]
+      @currencyCode = options[:currencyCode]
+      @customerSessionId = options[:customerSessionId]
+      @customerIpAddress = options[:customerIpAddress]
+      @customerUserAgent = options[:customerUserAgent]
+      @debug = options[:debug]
+      #@sig =
       @ssl = options[:ssl].nil? ? Hash.new : options[:ssl]
     end
 
@@ -15,11 +26,24 @@ module Ean
     end
 
     def api_url
-      'https://book.api.ean.com/ean-services/rs/hotel/v3'
+      if @ssl
+        'https://book.api.ean.com/ean-services/rs/hotel/v3/'
+      else
+        'http://api.ean.com/ean-services/rs/hotel/v3/'
+      end
+    end
+
+    def default_cid
+      '55505'
     end
 
     def ssl
       @ssl
+    end
+
+    def sig
+      # apikey + secret + timestamp -> md5 key
+      ''
     end
 
     def connection
@@ -27,7 +51,7 @@ module Ean
       params[:cid] = @cid
       params[:apikey] = @apikey
       params[:secret] = @secret
-      @connection ||= Faraday::Connection.new(:url => api_url, :ssl => @ssl, :params => params, :headers => defauls_headers) do |builder|)
+      @connection ||= Faraday::Connection.new(:url => api_url, :ssl => @ssl, :sig => sig, :params => params, :headers => defauls_headers) do |builder|)
         builder.use Faraday::Request::Multipart
         builder.use Faraday::Request::UrlEncode
 
@@ -36,6 +60,13 @@ module Ean
 
         builder.adapter Faraday.default_adapter
       end
+    end
+
+    def return_error_or_body(response, response_body)
+      if response.body.meta.code == 200
+          response_body
+      else
+          raise Ean::APIError.new(response.body.meta, response.body.response)
     end
 
     private

@@ -1,8 +1,4 @@
 module Ean
-  module Hotels
-    def version
-      '3'
-    end
-
+  module CarRentals
   end
 end
