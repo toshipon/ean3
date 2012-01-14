@@ -1,5 +1,5 @@
 module Ean
-  class Hotels
+  module Hotels
     # Request a List of Hotels
     #
     # @param [Hash] options
@@ -24,12 +24,12 @@ module Ean
     end
 
     def getGeoLocation
-      response = connection.get("/geoSearch")
+      response = connection.get("geoSearch")
       return_error_or_body(response, response.body.response)
     end
 
     def getInformation
-      response = conncetion.get("/info")
+      response = conncetion.get("info")
       return_error_or_body(response, response.body.response)
     end
 

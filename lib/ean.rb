@@ -11,6 +11,7 @@ module Ean
   end
 
   require 'ean/hotels'
+  require 'ean/client'
   #require 'ean/car_rentals'
   #require 'ean/air'
 end

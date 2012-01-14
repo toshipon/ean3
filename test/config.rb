@@ -1,0 +1,3 @@
+APIKEY = "XXXXX"
+SECRET = "XXXXX"
+

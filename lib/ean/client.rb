@@ -22,14 +22,15 @@ module Ean
     end
 
     def api_version
-      '3'
+      'v3'
     end
 
     def api_url
+      version = api_version()
       if @ssl
-        'https://book.api.ean.com/ean-services/rs/hotel/v3/'
+        "https://book.api.ean.com/ean-services/rs/hotel/#{version}/"
       else
-        'http://api.ean.com/ean-services/rs/hotel/v3/'
+        "http://api.ean.com/ean-services/rs/hotel/#{version}/"
       end
     end
 
@@ -51,7 +52,7 @@ module Ean
       params[:cid] = @cid
       params[:apikey] = @apikey
       params[:secret] = @secret
-      @connection ||= Faraday::Connection.new(:url => api_url, :ssl => @ssl, :sig => sig, :params => params, :headers => defauls_headers) do |builder|)
+      @connection ||= Faraday::Connection.new(:url => api_url, :ssl => @ssl, :sig => sig, :params => params, :headers => default_headers) do |builder|
         builder.use Faraday::Request::Multipart
         builder.use Faraday::Request::UrlEncode
 
@@ -67,6 +68,7 @@ module Ean
           response_body
       else
           raise Ean::APIError.new(response.body.meta, response.body.response)
+      end
     end
 
     private
@@ -78,4 +80,3 @@ module Ean
       end
     end
   end
-end
