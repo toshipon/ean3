@@ -18,7 +18,7 @@ module Ean
       @customerUserAgent = options[:customerUserAgent]
       @debug = options[:debug]
       #@sig =
-      @ssl = options[:ssl].nil? ? Hash.new : options[:ssl]
+      @ssl = options[:ssl]
     end
 
     def api_version
@@ -56,6 +56,8 @@ module Ean
         builder.use Faraday::Request::Multipart
         builder.use Faraday::Request::UrlEncoded
 
+        builder.use Faraday::Response::Logger
+
         builder.use Faraday::Response::Mashify
         builder.use Faraday::Response::ParseJson
 
@@ -64,7 +66,6 @@ module Ean
         builder.request :multipart
         builder.request :url_encoded
         builder.request :json
-
       end
     end
 

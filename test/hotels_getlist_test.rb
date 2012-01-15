@@ -10,12 +10,13 @@ class TestHotelGetList < Test::Unit::TestCase
     should "hoge" do
       stub_get("http://api.ean.com/ean-service/rs/hotel/v3/list", "hotel_getlist.json")
       options = {
-        :arrivalDate => "01/10/2012"
+        :arrivalDate => "02/10/2012",
+        #:departureDate => "02/10/2012",
+        :city => "tokyo"
       };
       hotels = @client.getList(options);
       #logger.debug hotels
-      puts hotels
-      puts hotels.HotelListResponse
+      #puts hotels
     end
   end
 end
