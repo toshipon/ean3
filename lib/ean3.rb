@@ -5,13 +5,13 @@ require 'faraday_middleware'
 
 directory = File.expand_path(File.dirname(__FILE__))
 
-module Ean
+module Ean3
   class << self
 
   end
 
-  require 'ean/hotels'
-  require 'ean/client'
-  #require 'ean/car_rentals'
-  #require 'ean/air'
+  require 'ean3/hotels'
+  require 'ean3/client'
+  #require 'ean3/car_rentals'
+  #require 'ean3/air'
 end

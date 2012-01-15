@@ -1,4 +1,4 @@
-module Ean
+module Ean3
   module CarRentals
   end
 end

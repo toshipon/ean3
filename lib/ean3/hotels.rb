@@ -1,4 +1,4 @@
-module Ean
+module Ean3
   module Hotels
     # Request a List of Hotels
     #

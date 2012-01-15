@@ -1,4 +1,4 @@
-module Ean
+module Ean333
   class APIError < StandardError
 
     attr_reader :code

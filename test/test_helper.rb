@@ -27,7 +27,7 @@ require 'hashie'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'ean'
+require 'ean3'
 require 'config'
 
 FakeWeb.allow_net_connect = true
@@ -37,7 +37,7 @@ def ean_test_client
   options[:apikey] = APIKEY # from config.rb
   options[:secret] = SECRET
   options[:minorRev] = 12
-  Ean::Client.new(options)
+  Ean3::Client.new(options)
 end
 
 def ean_url(url)

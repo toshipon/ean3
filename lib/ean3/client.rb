@@ -1,4 +1,4 @@
-module Ean
+module Ean3
   class Client
     extend Forwardable
 
