@@ -1,9 +1,11 @@
 require 'test_helper'
 
-class TestClient < ActiveSupport::TestCase
+class TestClient < Test::Unit::TestCase
 
-  test 'test samplet methos' do
-    assert true
+  context 'test samplet methos' do
+    should "hogehoge" do
+      true
+    end
   end
 
 end

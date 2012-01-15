@@ -20,7 +20,7 @@ module Ean
       response = connection.get do |req|
         req.url "list", options
       end
-      return_error_or_body(response, response.body.response)
+      return_error_or_body(response, response.body)
     end
 
     def getGeoLocation

@@ -1,7 +1,7 @@
 # Ean
 
 require 'faraday'
-require 'fareday_middleware'
+require 'faraday_middleware'
 
 directory = File.expand_path(File.dirname(__FILE__))
 

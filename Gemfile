@@ -1,8 +1,9 @@
 source "http://rubygems.org"
 
-gem 'faraday', '>= 0.6', '< 0.8'
+gem 'faraday', "~> 0.7.5"
 gem 'faraday_middleware', '>= 0.6', '< 0.8'
 gem 'hashie', '~> 1.0'
+gem 'log4r'
 
 group :development do
   gem "shoulda"

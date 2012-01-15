@@ -54,20 +54,25 @@ module Ean
       params[:secret] = @secret
       @connection ||= Faraday::Connection.new(:url => api_url, :ssl => @ssl, :sig => sig, :params => params, :headers => default_headers) do |builder|
         builder.use Faraday::Request::Multipart
-        builder.use Faraday::Request::UrlEncode
+        builder.use Faraday::Request::UrlEncoded
 
         builder.use Faraday::Response::Mashify
         builder.use Faraday::Response::ParseJson
 
         builder.adapter Faraday.default_adapter
+
+        builder.request :multipart
+        builder.request :url_encoded
+        builder.request :json
+
       end
     end
 
     def return_error_or_body(response, response_body)
-      if response.body.meta.code == 200
+      if response.success?
           response_body
       else
-          raise Ean::APIError.new(response.body.meta, response.body.response)
+          raise Ean::APIError.new(response.headers, response.body)
       end
     end
 

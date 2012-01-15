@@ -13,6 +13,18 @@ require 'fakeweb'
 require 'json'
 require 'hashie'
 
+#require 'log4r'
+#require 'log4r/configurator'
+
+#formatter = Log4r::PatternFormatter.new(
+#  :pattern => "%d %C [%l]: %M",
+#  :date_format => "%Y/%m/%d %H:%M:%S"
+#)
+#outputter = Log4r::StdoutOutputter.new(STDOUT, :formatter => formatter)
+#logger = Log4r::Logger.new("ean")
+#logger.add(outputter)
+#config.logger = logger
+
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'ean'
