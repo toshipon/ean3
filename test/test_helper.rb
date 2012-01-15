@@ -37,6 +37,9 @@ def ean_test_client
   options[:apikey] = APIKEY # from config.rb
   options[:secret] = SECRET
   options[:minorRev] = 12
+  options[:debug] = true
+  options[:locale] = "ja_JP"
+  options[:currencyCode] = "JPY"
   Ean3::Client.new(options)
 end
 

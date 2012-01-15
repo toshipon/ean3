@@ -52,11 +52,19 @@ module Ean3
       params[:cid] = @cid
       params[:apikey] = @apikey
       params[:secret] = @secret
+      params[:minorRev] = @minorRev
+      params[:locale] = @locale
+      params[:currencyCode] = @currencyCode
+      params[:customerSessionId] = @customerSessionId
+      params[:customerIpAddress] = @customerIpAddress
+      params[:customerUserAgent] = @customerUserAgent
       @connection ||= Faraday::Connection.new(:url => api_url, :ssl => @ssl, :sig => sig, :params => params, :headers => default_headers) do |builder|
         builder.use Faraday::Request::Multipart
         builder.use Faraday::Request::UrlEncoded
 
-        builder.use Faraday::Response::Logger
+        if @debug
+          builder.use Faraday::Response::Logger
+        end
 
         builder.use Faraday::Response::Mashify
         builder.use Faraday::Response::ParseJson
