@@ -2,6 +2,8 @@
 
 ean of rails plugin.
 
+http://developer.ean.com/docs/read/hotels/Version_3
+
 ## Example
 =======
 
@@ -16,8 +18,8 @@ ean of rails plugin.
 ### controller
 
     options = {
-        :apikey => 'snhsumahxydxvrfq7c3jd54d',
-        :secret => 'hkEnpfw2',
+        :apikey => 'XXXXXXXXX',
+        :secret => 'XXXXXXXXX',
         :minorRev => 12,
         :locale => "ja_JP",
         :currencyCode => "JPY",
