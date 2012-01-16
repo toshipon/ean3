@@ -7,11 +7,11 @@ ean of rails plugin.
 
 ### console
 
-  gem install ean3
+   gem install ean3
 
 ### Gemfile
 
-  require 'ean3'
+   require 'ean3'
 
 ### controller
 
