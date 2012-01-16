@@ -4,18 +4,17 @@ ean of rails plugin.
 
 http://developer.ean.com/docs/read/hotels/Version_3
 
-## Example
-=======
+# Example
 
-### console
+## console
 
-   gem install ean3
+    gem install ean3
 
-### Gemfile
+## Gemfile
 
-   require 'ean3'
+    require 'ean3'
 
-### controller
+## controller
 
     options = {
         :apikey => 'XXXXXXXXX',
