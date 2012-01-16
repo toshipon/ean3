@@ -6,20 +6,16 @@ ean of rails plugin.
 Example
 =======
 
-Example goes here.
+### console
 
-console
-<pre>
-gem install ean3
-</pre>
+  gem install ean3
 
-Gemfile
-<pre>
-require 'ean3'
-</pre>
+### Gemfile
 
-controller
-<pre>
+  require 'ean3'
+
+### controller
+
     options = {
         :apikey => 'snhsumahxydxvrfq7c3jd54d',
         :secret => 'hkEnpfw2',
@@ -33,7 +29,6 @@ controller
         :arrivalDate => "02/10/2012",
         :city => "tokyo"
     })
-</pre>
 
 
 Copyright (c) 2012 [name of plugin creator], released under the MIT license
