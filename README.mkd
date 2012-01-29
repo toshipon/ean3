@@ -31,5 +31,8 @@ http://developer.ean.com/docs/read/hotels/Version_3
         :city => "tokyo"
     })
 
+# Sample Project
+
+https://github.com/toshipon/ean3_sample
 
 Copyright (c) 2012 Toshiaki Takahashi, released under the MIT license
