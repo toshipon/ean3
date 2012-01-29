@@ -77,7 +77,7 @@ module Ean3
     #
     #
     def getReservation
-      response = conncetion.get do |req|
+      response = conncetion.post do |req|
         req.url "res", options
       end
       return_error_or_body(response, response.body)
@@ -107,7 +107,7 @@ module Ean3
     #
     #
     def getCancel
-      response = conncetion.get do |req|
+      response = conncetion.post do |req|
         req.url "cancel", options
       end
       return_error_or_body(response, response.body)
