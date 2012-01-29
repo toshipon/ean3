@@ -2,6 +2,15 @@
 require 'rake/testtask'
 require 'rdoc/task'
 
+require 'bundler'
+begin
+  Bundler.setup :default, :development
+rescue Bundler::BundlerError => e
+  $stderr.puts e.message
+  $stderr.puts 'Run `bundle install` to install missing gem'
+  exit e.status_code
+end
+
 desc 'Default: run unit tests.'
 task :default => :test
 
@@ -21,3 +30,4 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+

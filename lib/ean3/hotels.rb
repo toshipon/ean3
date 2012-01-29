@@ -23,38 +23,104 @@ module Ean3
       return_error_or_body(response, response.body)
     end
 
+    # Location Geo Functions
+    #
+    #
     def getGeoLocation
-      response = connection.get("geoSearch")
-      return_error_or_body(response, response.body.response)
+      response = connection.get do |req|
+        req.url "geoSearch", options
+      end
+      return_error_or_body(response, response.body)
     end
 
+    # Request Hotel Infomation
+    #
+    #
     def getInformation
-      response = conncetion.get("info")
-      return_error_or_body(response, response.body.response)
+      response = conncetion.get do |req|
+        req.url "info", options
+      end
+      return_error_or_body(response, response.body)
     end
 
+    # Request Hotel Rooms
+    #
+    #
     def getAvaliabillity
+      response = conncetion.get do |req|
+        req.url "avail", options
+      end
+      return_error_or_body(response, response.body)
     end
 
+    # Request Rate Rules
+    #
+    #
     def getRules
+      response = conncetion.get do |req|
+        req.url "rules", options
+      end
+      return_error_or_body(response, response.body)
     end
 
+    # Request Payment Types
+    #
+    #
     def getPaymentInfo
+      response = conncetion.get do |req|
+        req.url "paymentInfo", options
+      end
+      return_error_or_body(response, response.body)
     end
 
+    # Book a Reservation
+    #
+    #
     def getReservation
-    end
+      response = conncetion.get do |req|
+        req.url "res", options
+      end
+      return_error_or_body(response, response.body)
+   end
 
+    # Request Alternate Properties
+    #
+    #
     def getAlternateProperties
+      response = conncetion.get do |req|
+        req.url "altProps", options
+      end
+      return_error_or_body(response, response.body)
     end
 
+    # Request Itinerary Record
+    #
+    #
     def getItinerary
+      response = conncetion.get do |req|
+        req.url "itin", options
+      end
+      return_error_or_body(response, response.body)
     end
 
+    # Cancel a Reservation
+    #
+    #
     def getCancel
+      response = conncetion.get do |req|
+        req.url "cancel", options
+      end
+      return_error_or_body(response, response.body)
     end
 
+    # Ping Request
+    #
+    #
     def getPing
+      response = conncetion.get do |req|
+        req.url "ping", options
+      end
+      return_error_or_body(response, response.body)
     end
   end
 
