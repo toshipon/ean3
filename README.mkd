@@ -1,7 +1,7 @@
 # What is ean3?
 
-ean3 is a plugin of ruby.
-The api document, please refer to the following url.
+ean3 is wrapped around a ruby plugin EAN API.
+The API document, please refer to the following url.
 
 http://developer.ean.com/docs/read/hotels/Version_3
 
