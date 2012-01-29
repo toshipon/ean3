@@ -1,10 +1,11 @@
-## Ean
+# What is ean3?
 
-ean of rails plugin.
+ean3 is a plugin of ruby.
+The api document, please refer to the following url.
 
 http://developer.ean.com/docs/read/hotels/Version_3
 
-# Example
+# How to use
 
 ## console
 
@@ -31,4 +32,4 @@ http://developer.ean.com/docs/read/hotels/Version_3
     })
 
 
-Copyright (c) 2012 [name of plugin creator], released under the MIT license
+Copyright (c) 2012 Toshiaki Takahashi, released under the MIT license
