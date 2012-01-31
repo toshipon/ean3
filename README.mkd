@@ -28,7 +28,8 @@ http://developer.ean.com/docs/read/hotels/Version_3
     }
     @client = Ean3::Client.new(options)
     @response = @client.getList({
-        :arrivalDate => "02/10/2012",
+        :arrivalDate => "03/10/2012",
+        :departureDate => "03/13/2012"
         :city => "tokyo"
     })
 
