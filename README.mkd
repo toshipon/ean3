@@ -20,6 +20,7 @@ http://developer.ean.com/docs/read/hotels/Version_3
     options = {
         :apikey => 'XXXXXXXXX',
         :secret => 'XXXXXXXXX',
+        :cid => 'XXXXXXXX',
         :minorRev => 12,
         :locale => "ja_JP",
         :currencyCode => "JPY",
