@@ -1,6 +1,6 @@
 # What is ean3?
 
-ean3 is wrapped around a ruby plugin EAN API.
+ean3 is wrapped around a ruby plugin EAN(Expedia Affiliate Network) API.
 The API document, please refer to the following url.
 
 http://developer.ean.com/docs/read/hotels/Version_3
